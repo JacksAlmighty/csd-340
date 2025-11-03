@@ -1,0 +1,56 @@
+<!-- Jackson Webster -->
+<!-- Module 9.3 Assignment -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSD 340 Web Development with HTML and CSS</title>
+
+  <script>
+    var wordOne = "sunny";
+    var wordTwo = "school";
+    var wordThree = "friends";
+    var wordFour = "pizza";
+
+    function fillOne() {
+      document.getElementById('blank1').innerHTML = wordOne;
+    }
+    function fillTwo() {
+      document.getElementById('blank2').innerHTML = wordTwo;
+    }
+    function fillThree() {
+      document.getElementById('blank3').innerHTML = wordThree;
+    }
+    function fillFour() {
+      document.getElementById('blank4').innerHTML = wordFour;
+    }
+  </script>
+</head>
+<body>
+  <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+  <p>
+    Today was a <span id="blank1">_________</span> day, and I woke up feeling happy.
+    I got ready for <span id="blank2">_________</span> and packed my bag.
+  </p>
+
+  <p>
+    At lunch, I sat with my <span id="blank3">_________</span> and we talked about our weekend plans.
+    We laughed a lot and had a good time.
+  </p>
+
+  <p>
+    After school, we went to get <span id="blank4">_________</span> before going home.
+    It was a simple day, but it made me smile.
+  </p>
+
+  <p>
+    <button type="button" onclick="fillOne()">Fill word 1</button>
+    <button type="button" onclick="fillTwo()">Fill word 2</button>
+    <button type="button" onclick="fillThree()">Fill word 3</button>
+    <button type="button" onclick="fillFour()">Fill word 4</button>
+  </p>
+</body>
+</html>
