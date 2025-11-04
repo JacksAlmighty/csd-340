@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      margin: 15px;
+      cursor: pointer;
+      border: 2px solid #333;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Assignment 10.3: JavaScript - Part 2</h1>
+  <p>Click an image to toggle it!</p>
+
+  
+  <img id="img1" src="images/pic1.jpg" alt="Picture 1" onclick="toggleImage(this, 'images/pic1.jpg', 'images/pic1_alt.jpg')">
+  <img id="img2" src="images/pic2.jpg" alt="Picture 2" onclick="toggleImage(this, 'images/pic2.jpg', 'images/pic2_alt.jpg')">
+  <img id="img3" src="images/pic3.jpg" alt="Picture 3" onclick="toggleImage(this, 'images/pic3.jpg', 'images/pic3_alt.jpg')">
+
+  <script>
+    function toggleImage(imgElement, originalSrc, altSrc) {
+      if (imgElement.src.includes(originalSrc)) {
+        imgElement.src = altSrc;
+      } else {
+        imgElement.src = originalSrc;
+      }
+    }
+  </script>
+</body>
+</html>
