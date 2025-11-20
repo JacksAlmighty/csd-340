@@ -15,11 +15,11 @@
         <div class="ol-block">
             <h3>Top 10 Favorite Video Games</h3>
 
-            <!-- Buttons -->
+            
             <button onclick="topToBottom()">Top to Bottom</button>
             <button onclick="bottomToTop()">Bottom to Top</button>
 
-            <!-- Where the list will display -->
+            
             <ol id="gameList"></ol>
         </div>
 
@@ -55,37 +55,37 @@
         "Minecraft"
     ];
 
-    // Top → Bottom (1–10)
+    
     function topToBottom() {
         const list = document.getElementById("gameList");
         list.innerHTML = "";
-        list.style.listStyleType = "decimal"; // normal numbers
+        list.style.listStyleType = "decimal"; 
 
         games.forEach((game, i) => {
             const li = document.createElement("li");
             li.textContent = game;
-            li.value = i + 1;   // Number 1–10
+            li.value = i + 1;   
             list.appendChild(li);
         });
     }
 
-    // Bottom → Top (10–1)
+    
     function bottomToTop() {
         const list = document.getElementById("gameList");
         list.innerHTML = "";
-        list.style.listStyleType = "decimal"; // keeps list numeric
+        list.style.listStyleType = "decimal"; 
 
         const reversed = [...games].reverse();
 
         reversed.forEach((game, i) => {
             const li = document.createElement("li");
             li.textContent = game;
-            li.value = 10 - i; // numbers count downward
+            li.value = 10 - i; 
             list.appendChild(li);
         });
     }
 
-    // Load default list
+    
     topToBottom();
 </script>
 
