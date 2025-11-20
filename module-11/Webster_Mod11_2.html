@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSD 340 Web Development</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      color: #000;
+      background-color: #fff;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      width: 600px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      padding: 4px;
+      margin-right: 5px;
+    }
+
+    button {
+      padding: 4px 8px;
+      margin-right: 4px;
+      border: 1px solid #999;
+      background-color: #e0e0e0;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d0d0d0;
+    }
+
+    #todoList {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Assignment 11.2</h1>
+
+  <p>
+    This is an interactive To Do List. Type in your first item in the text box, then click Add. 
+    Click the Display button to see current items in the list. 
+    Click on Delete Last Entry if you'd like to remove the last entry.
+  </p>
+
+  <input type="text" id="taskInput">
+  <button onclick="addTask()">Add</button>
+  <button onclick="deleteLast()">Delete Last Entry</button>
+  <button onclick="displayTasks()">Display</button>
+
+  <div id="todoList"></div>
+
+  <script>
+    let tasks = [];
+
+    function addTask() {
+      const task = document.getElementById("taskInput").value.trim();
+      if (task === "") {
+        alert("Please enter a task before adding.");
+        return;
+      }
+      tasks.push(task);
+      alert("Item " + tasks.length + " = " + task + " was added.");
+      document.getElementById("taskInput").value = "";
+    }
+
+    function deleteLast() {
+      if (tasks.length === 0) {
+        alert("There are no tasks to delete.");
+        return;
+      }
+      const removed = tasks.pop();
+      alert("Deleted the last entry: " + removed);
+    }
+
+    function displayTasks() {
+      let output = "";
+      for (let i = 0; i < tasks.length; i++) {
+        output += "Item " + (i + 1) + " = " + tasks[i] + "<br>";
+      }
+      if (tasks.length === 0) {
+        output = "<em>No tasks to display.</em>";
+      }
+      document.getElementById("todoList").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

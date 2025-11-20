@@ -1,0 +1,93 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="Webster_Mod12_2.css">
+</head>
+<body>
+
+<div id="container">
+
+    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+
+    <div class="columns">
+        <div class="ol-block">
+            <h3>Top 10 Favorite Video Games</h3>
+
+            <!-- Buttons -->
+            <button onclick="topToBottom()">Top to Bottom</button>
+            <button onclick="bottomToTop()">Bottom to Top</button>
+
+            <!-- Where the list will display -->
+            <ol id="gameList"></ol>
+        </div>
+
+        <div class="ul-block">
+            <h3>5 Things I've Learned Since the Course Started</h3>
+            <ul>
+                <li>How to make a website.</li>
+                <li>How to add design features to a website.</li>
+                <li>How to import Java into HTML</li>
+                <li>How to code in HTML.</li>
+                <li>Tactics to take advantage of brains.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="bottom">
+        <a href="https://jacksalmighty.github.io/csd-340/index.html">Back to Landing Page</a>
+    </div>
+
+</div>
+
+<script>
+    const games = [
+        "Terraria",
+        "Halo 2",
+        "Borderlands 2",
+        "Just Cause 2",
+        "Halo Reach",
+        "Doom Eternal",
+        "Doom",
+        "Skate 3",
+        "Farcry 3",
+        "Minecraft"
+    ];
+
+    // Top → Bottom (1–10)
+    function topToBottom() {
+        const list = document.getElementById("gameList");
+        list.innerHTML = "";
+        list.style.listStyleType = "decimal"; // normal numbers
+
+        games.forEach((game, i) => {
+            const li = document.createElement("li");
+            li.textContent = game;
+            li.value = i + 1;   // Number 1–10
+            list.appendChild(li);
+        });
+    }
+
+    // Bottom → Top (10–1)
+    function bottomToTop() {
+        const list = document.getElementById("gameList");
+        list.innerHTML = "";
+        list.style.listStyleType = "decimal"; // keeps list numeric
+
+        const reversed = [...games].reverse();
+
+        reversed.forEach((game, i) => {
+            const li = document.createElement("li");
+            li.textContent = game;
+            li.value = 10 - i; // numbers count downward
+            list.appendChild(li);
+        });
+    }
+
+    // Load default list
+    topToBottom();
+</script>
+
+</body>
+</html>
